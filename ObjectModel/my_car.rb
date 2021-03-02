@@ -9,6 +9,10 @@ class MyCar
     @current_speed = 0
   end
 
+  def self.gas_mileage(gallons, miles)
+    puts "#{miles / gallons} miles per gallon of gas"
+  end
+
 #   def change_color(y, c, m)
 #     self.year = y
 #     self.color = c
@@ -42,6 +46,10 @@ class MyCar
   def self.bar #class method
     puts "class method"
   end
+
+  def to_s
+    "My car is a #{color}, #{year}, #{@model}!"
+  end
 end
 
 lumina = MyCar.new(1997, 'chevy lumina', 'white')
@@ -61,4 +69,9 @@ puts lumina.color
 puts lumina.year
 
 lumina.spray_paint('red')
-lumina.bar
+# lumina.bar
+
+MyCar.gas_mileage(13, 351) 
+
+my_car = MyCar.new("2010", "Ford Focus", "silver")
+puts my_car
